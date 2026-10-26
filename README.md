@@ -16,6 +16,7 @@ The Wheelieslow website. It's a Jekyll site, which GitHub Pages builds and hosts
    summary: "One sentence that shows up on the post card."
    image: /assets/img/posts/old-man-winter.jpg
    youtube_id: dQw4w9WgXcQ
+   strava_id: 12345678901
    ---
 
    Write the post here. Leave a blank line between paragraphs.
@@ -26,10 +27,24 @@ The Wheelieslow website. It's a Jekyll site, which GitHub Pages builds and hosts
    - another bullet
    ```
 
-   `image` and `youtube_id` are optional, so delete those lines if you don't need them. The YouTube id is the part after `watch?v=` in a video link.
+   `image`, `youtube_id` and `strava_id` are optional, so delete those lines if you don't need them.
+   - `youtube_id` puts the video at the top of the post. It's the part after `watch?v=` (or after `youtu.be/`) in the video link.
+   - `strava_id` puts the ride (map, distance, elevation) at the bottom of the post under "The ride". It's the number at the end of the activity link: `strava.com/activities/12345678901`. The activity must be public on Strava, or the embed shows nothing.
 4. Click **Commit changes**. The post appears on the Journal page and the home page.
 
 A post dated in the future won't show up until that date has passed and the site rebuilds.
+
+## Videos, rides and photos in the middle of a post
+
+Put any of these on its own line, anywhere in a post, as many times as you like:
+
+```
+{% include youtube.html id="dQw4w9WgXcQ" %}
+{% include strava.html id="12345678901" %}
+{% include photo.html src="/assets/img/posts/barry-start.jpg" alt="Start line at Barry-Roubaix" caption="Cold start in Hastings" %}
+```
+
+`caption` is optional. `alt` describes the photo for people using screen readers.
 
 ## Adding photos
 
@@ -45,7 +60,9 @@ Edit `_data/season.yml`. Change `status` to `registered`, `lottery`, `planned`, 
 
 ## Changing site settings
 
-`_config.yml` holds the site description, the YouTube and Instagram links, and the email signup link (`newsletter_url`). Leave a link empty to hide it.
+`_config.yml` holds the site description, the YouTube, Instagram and Strava links, and the email signup link (`newsletter_url`). Leave a link empty to hide it.
+
+It also has `home_photo` and `about_photo`. Upload a photo to `assets/img/`, then set, for example, `home_photo: "/assets/img/home.jpg"` and a short `home_photo_alt` description. The photo replaces the big WS wheel on that page. A tall (portrait) photo works best on the home page, and a square one on the About page.
 
 ## Brand colors
 

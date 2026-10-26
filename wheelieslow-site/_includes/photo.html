@@ -1,0 +1,8 @@
+{%- comment -%}
+Photo with optional caption. Usage inside a post:
+  {% include photo.html src="/assets/img/posts/barry-start.jpg" alt="Start line at Barry-Roubaix" caption="Cold start in Hastings" %}
+{%- endcomment -%}
+<figure class="photo">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt | default: '' }}" loading="lazy">
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

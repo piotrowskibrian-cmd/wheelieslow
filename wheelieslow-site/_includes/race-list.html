@@ -1,0 +1,33 @@
+{%- comment -%}
+Race list from _data/season.yml. Pass limit to show only upcoming N.
+{%- endcomment -%}
+<ol class="races">
+  {%- assign shown = 0 -%}
+  {%- for race in site.data.season -%}
+    {%- if race.status == "dropped" -%}{%- continue -%}{%- endif -%}
+    {%- if include.limit and shown >= include.limit -%}{%- break -%}{%- endif -%}
+    {%- assign shown = shown | plus: 1 -%}
+    <li class="race race-{{ race.status }}" data-date="{{ race.date | date: '%Y-%m-%d' }}">
+      <div class="race-date">
+        <span class="race-month">{{ race.date | date: "%b" }}</span>
+        <span class="race-day">{{ race.date | date: "%-d" }}</span>
+      </div>
+      <div class="race-body">
+        <h3 class="race-name">{{ race.name }}</h3>
+        <p class="race-meta">{{ race.location }} <span aria-hidden="true">·</span> {{ race.distance }}</p>
+        {% if race.report != "" and race.report %}<a class="race-report" href="{{ race.report | relative_url }}">Read the race report</a>{% endif %}
+      </div>
+      <div class="race-side">
+        <span class="status status-{{ race.status }}">
+          {%- case race.status -%}
+            {%- when "registered" -%}Registered
+            {%- when "lottery" -%}Lottery
+            {%- when "done" -%}Done
+            {%- else -%}Planned
+          {%- endcase -%}
+        </span>
+        <span class="race-countdown" aria-live="off"></span>
+      </div>
+    </li>
+  {%- endfor -%}
+</ol>

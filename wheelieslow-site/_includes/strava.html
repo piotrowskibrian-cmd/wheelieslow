@@ -1,0 +1,10 @@
+{%- comment -%}
+Strava activity embed. Usage inside a post:
+  {% include strava.html id="12345678901" %}
+The id is the number at the end of the activity link: strava.com/activities/<id>
+{%- endcomment -%}
+<div class="embed-strava">
+  <div class="strava-embed-placeholder" data-embed-type="activity" data-embed-id="{{ include.id }}" data-style="standard" data-from-embed="false"></div>
+  <script src="https://strava-embeds.com/embed.js"></script>
+  <noscript><a href="https://www.strava.com/activities/{{ include.id }}">View this ride on Strava</a></noscript>
+</div>

@@ -15,6 +15,15 @@ baseurl: ""
 # Social links. Leave a value empty ("") to hide that link.
 youtube: "https://www.youtube.com/@wheelieslow"
 instagram: "https://www.instagram.com/wheelieslow"
+strava: "https://www.strava.com/athletes/736237"
+
+# Photos. Upload an image to assets/img/ and put its path here, e.g.
+# "/assets/img/home.jpg". It replaces the big WS wheel on that page.
+# Leave empty to keep the wheel.
+home_photo: ""
+home_photo_alt: ""
+about_photo: ""
+about_photo_alt: ""
 
 # Email signup. When you set up a free newsletter (Buttondown, Kit, etc.),
 # paste its public signup page link here and a "Get updates by email"

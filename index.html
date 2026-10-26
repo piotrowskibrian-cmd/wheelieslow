@@ -14,9 +14,15 @@ description: Riding, skiing and climbing my way back. A former Cat 1 mountain bi
         <a class="button button-ghost" href="{{ '/season/' | relative_url }}">The 2027 season</a>
       </div>
     </div>
+    {% if site.home_photo != "" %}
+    <figure class="hero-photo">
+      <img src="{{ site.home_photo | relative_url }}" alt="{{ site.home_photo_alt }}">
+    </figure>
+    {% else %}
     <div class="hero-mark">
       {% include logo-wheel.html size="320" %}
     </div>
+    {% endif %}
   </div>
 </section>
 

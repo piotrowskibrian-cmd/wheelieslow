@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="post wrap-narrow">
+  <header class="post-header">
+    <p class="eyebrow">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.category %}<span class="dot" aria-hidden="true">·</span>{{ page.category }}{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.image %}
+  <figure class="post-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+  </figure>
+  {% endif %}
+
+  {% if page.youtube_id %}
+    {% include youtube.html id=page.youtube_id title=page.title %}
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.strava_id %}
+  <section class="ride-data" aria-label="Ride data">
+    <h2>The ride</h2>
+    {% include strava.html id=page.strava_id %}
+  </section>
+  {% endif %}
+
+  <footer class="post-footer">
+    {% include follow.html %}
+    <nav class="post-nav" aria-label="More posts">
+      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>Older</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+      {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span>Newer</span>{{ page.next.title }}</a>{% endif %}
+    </nav>
+  </footer>
+</article>
