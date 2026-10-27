@@ -117,7 +117,13 @@ def _request(method, url, headers):
             hint = " The Garmin key may be wrong, deleted or expired. Create a new one and update the GARMIN_API_KEY secret."
         elif err.code == 429:
             hint = " Garmin is rate limiting requests. The next daily run will try again."
-        raise SystemExit(f"Garmin request failed: HTTP {err.code} for {urllib.parse.urlsplit(url).path}.{hint}")
+        try:
+            detail = err.read().decode("utf-8", "replace")
+        except Exception:
+            detail = ""
+        detail = " ".join(detail.split())[:300]
+        raise SystemExit(f"Garmin request failed: HTTP {err.code} for {method} {urllib.parse.urlsplit(url).path}.{hint}"
+                         + (f" Garmin said: {detail}" if detail else ""))
     except urllib.error.URLError as err:
         raise SystemExit(f"Could not reach Garmin: {err.reason}")
 
@@ -265,4 +271,14 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except SystemExit as stop:
+        if isinstance(stop.code, str):
+            # Shows up as an error annotation on the GitHub run page.
+            print(f"::error title=Garmin stats::{stop.code}")
+            sys.exit(1)
+        raise
+    except Exception as err:  # unexpected response shape, etc.
+        print(f"::error title=Garmin stats::{type(err).__name__}: {err}")
+        sys.exit(1)

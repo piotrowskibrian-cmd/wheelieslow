@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "23 11 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/update_stats.py
+      - .github/workflows/garmin-stats.yml
 
 permissions:
   contents: write
@@ -19,7 +24,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Pull totals from Garmin
         env:
