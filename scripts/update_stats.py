@@ -107,7 +107,9 @@ def label_for(key):
 # Garmin API
 # ---------------------------------------------------------------------------
 def _request(method, url, headers):
-    req = urllib.request.Request(url, method=method, headers=headers)
+    headers = {"User-Agent": "wheelieslow-stats/1.0", **headers}
+    data = b"" if method == "POST" else None  # sends Content-Length: 0 like Garmin's own client
+    req = urllib.request.Request(url, data=data, method=method, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             return resp.read().decode("utf-8")
@@ -128,10 +130,20 @@ def _request(method, url, headers):
         raise SystemExit(f"Could not reach Garmin: {err.reason}")
 
 
+def clean_key(raw):
+    """Undo common copy-paste extras: spaces, line breaks, quotes, an 'ApiKey ' prefix."""
+    key = "".join(raw.split()).strip('"\'')
+    if key.lower().startswith("apikey") and len(key) > 6 and not key[6:7].isalnum():
+        key = key[7:]
+    elif key.lower().startswith("apikey"):
+        key = key[6:]
+    return key
+
+
 def get_access_token(api_key):
     body = _request("POST", API_HOST + TOKEN_PATH, {
         "Authorization": f"ApiKey {api_key}",
-        "Accept": "application/json, text/plain",
+        "Accept": "*/*",
     }).strip()
     # Garmin may return the token as plain text or inside JSON.
     try:
@@ -238,10 +250,12 @@ def summarize(activities, year):
 
 
 def main():
-    api_key = os.environ.get("GARMIN_API_KEY", "").strip()
+    api_key = clean_key(os.environ.get("GARMIN_API_KEY", ""))
     if not api_key:
         print("GARMIN_API_KEY is not set, so there is nothing to update yet.")
         return 0
+    # Safe to log: says nothing about the key's content.
+    print(f"::notice title=Garmin key::Using a Garmin key that is {len(api_key)} characters long.")
 
     today = dt.date.today()
     year_start = dt.date(today.year, 1, 1)
