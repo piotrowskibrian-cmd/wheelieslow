@@ -1,7 +1,8 @@
 name: Update Garmin stats
 
 # Runs once a day (about 6:20 AM Central) and can also be run by hand from
-# the Actions tab: Update Garmin stats -> Run workflow.
+# the Actions tab: Update Garmin stats -> Run workflow. It also runs
+# whenever this file or scripts/update_stats.py changes.
 on:
   schedule:
     - cron: "23 11 * * *"
