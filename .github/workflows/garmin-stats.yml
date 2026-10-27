@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 concurrency:
   group: garmin-stats
@@ -45,9 +44,3 @@ jobs:
           git commit -m "Update Garmin stats"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Rebuild the site
-        if: steps.save.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent
