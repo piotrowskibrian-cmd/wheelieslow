@@ -2,11 +2,16 @@
 title: "Why Wheelieslow, and why now"
 category: Comeback
 summary: "Twenty years of riding, three injuries in six years, and a plan to race again at 40. Here's what this site is for."
+image: /assets/img/posts/why-wheelieslow-mud.jpg
+image_alt: "Brian riding a muddy cyclocross course, covered in mud"
+image_credit: Wilfried Loche
 ---
 
 I started riding bikes at 19. I'm 39 now, and for most of the twenty years in between, riding was the thing that organized my life.
 
 Through my twenties I raced a lot. I worked my way up to Cat 1 on the mountain bike and Cat 2 in cyclocross, and the further a race got from pavement, the more I liked it. In the winter I skied, and when I needed something to keep me honest between seasons, I picked up cross-country skiing too.
+
+{% include photo.html src="/assets/img/posts/why-wheelieslow-corner.jpg" alt="Brian cornering on a cyclocross course with another rider behind him" %}
 
 ## The last six years
 
@@ -16,9 +21,13 @@ In 2020 I tore my ACL skiing. That meant surgery, a long rehab, and a slow retur
 
 Years ago someone told me my lack of stretching would catch up with me. It did.
 
+{% include photo.html src="/assets/img/posts/why-wheelieslow-runup.jpg" alt="Brian running a muddy section with his bike on his shoulder" caption="Photo: Wilfried Loche" %}
+
 ## What's changed
 
 I'm spending real time in the gym now, lifting, and I've started climbing. Neither of those was ever part of the plan when I was racing. Both feel like the reason I might still be racing at 40.
+
+{% include photo.html src="/assets/img/posts/why-wheelieslow-trees.jpg" alt="Brian riding a muddy cyclocross course lined with bare trees" %}
 
 ## What this site is for
 

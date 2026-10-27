@@ -19,10 +19,10 @@ strava: "https://www.strava.com/athletes/736237"
 # Photos. Upload an image to assets/img/ and put its path here, e.g.
 # "/assets/img/home.jpg". It replaces the big WS wheel on that page.
 # Leave empty to keep the wheel.
-home_photo: ""
-home_photo_alt: ""
-about_photo: ""
-about_photo_alt: ""
+home_photo: "/assets/img/home.jpg"
+home_photo_alt: "Brian hopping a barrier with his bike on his shoulder at a cyclocross race"
+about_photo: "/assets/img/about.jpg"
+about_photo_alt: "Brian smiling in a green jersey after a gravel ride"
 
 # Email signup. When you set up a free newsletter (Buttondown, Kit, etc.),
 # paste its public signup page link here and a "Get updates by email"
