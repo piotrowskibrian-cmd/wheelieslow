@@ -181,8 +181,9 @@ def type_key(a):
 
 def summarize(activities, year):
     miles = 0.0
-    rides = gym = other = climbing = 0
+    rides = other = climbing = 0
     ski_dates = set()
+    gym_dates = set()
     latest = None
     seen = set()
 
@@ -203,7 +204,7 @@ def summarize(activities, year):
             rides += 1
             miles += float(a.get("distance") or 0) / 1609.344
         elif kind == "gym":
-            gym += 1
+            gym_dates.add(day)
         elif kind == "ski":
             ski_dates.add(day)
         else:
@@ -219,7 +220,7 @@ def summarize(activities, year):
         "year": year,
         "miles_ridden": round(miles),
         "rides": rides,
-        "gym_sessions": gym,
+        "gym_days": len(gym_dates),
         "ski_days": len(ski_dates),
         "other_sessions": other,
         "climbing_sessions": climbing,
@@ -254,7 +255,7 @@ def main():
         json.dump(stats, f, indent=2)
         f.write("\n")
     print(f"Updated totals from {len(activities)} activities: "
-          f"{stats['miles_ridden']} mi, {stats['gym_sessions']} gym, "
+          f"{stats['miles_ridden']} mi, {stats['gym_days']} gym days, "
           f"{stats['ski_days']} ski days, {stats['other_sessions']} other.")
     return 0
 
