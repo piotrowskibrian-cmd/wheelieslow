@@ -56,7 +56,7 @@ def is_ski(key):
 
 
 def bucket(key):
-    """Return 'ride', 'gym', 'ski', 'other' or None (ignored)."""
+    """Return 'ride', 'gym', 'ski', 'climb', 'other' or None (ignored)."""
     key = (key or "").lower()
     if is_ride(key):
         return "ride"
@@ -64,6 +64,8 @@ def bucket(key):
         return "gym"
     if is_ski(key):
         return "ski"
+    if any(w in key for w in CLIMBING_WORDS):
+        return "climb"
     if key in IGNORED_TYPES:
         return None
     return "other"
@@ -181,9 +183,10 @@ def type_key(a):
 
 def summarize(activities, year):
     miles = 0.0
-    rides = other = climbing = 0
+    rides = other = 0
     ski_dates = set()
     gym_dates = set()
+    climb_dates = set()
     latest = None
     seen = set()
 
@@ -207,10 +210,10 @@ def summarize(activities, year):
             gym_dates.add(day)
         elif kind == "ski":
             ski_dates.add(day)
+        elif kind == "climb":
+            climb_dates.add(day)
         else:
             other += 1
-            if any(w in key for w in CLIMBING_WORDS):
-                climbing += 1
 
         stamp = str(a.get("startTimeLocal") or day.isoformat())
         if latest is None or stamp > latest[0]:
@@ -222,8 +225,8 @@ def summarize(activities, year):
         "rides": rides,
         "gym_days": len(gym_dates),
         "ski_days": len(ski_dates),
+        "climbing_days": len(climb_dates),
         "other_sessions": other,
-        "climbing_sessions": climbing,
         "latest": {"label": label_for(latest[1]), "date": latest[2].isoformat()} if latest else None,
     }
 
@@ -256,7 +259,8 @@ def main():
         f.write("\n")
     print(f"Updated totals from {len(activities)} activities: "
           f"{stats['miles_ridden']} mi, {stats['gym_days']} gym days, "
-          f"{stats['ski_days']} ski days, {stats['other_sessions']} other.")
+          f"{stats['ski_days']} ski days, "
+          f"{stats['climbing_days']} climbing days, {stats['other_sessions']} other.")
     return 0
 
 

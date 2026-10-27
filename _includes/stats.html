@@ -32,6 +32,10 @@ scripts/update_stats.py). Shows nothing until that file exists.
         <dd>{{ s.ski_days | default: 0 }}</dd>
       </div>
       <div class="stat">
+        <dt>Climbing days</dt>
+        <dd>{{ s.climbing_days | default: 0 }}</dd>
+      </div>
+      <div class="stat">
         <dt>Other activities</dt>
         <dd>{{ s.other_sessions | default: 0 }}</dd>
       </div>

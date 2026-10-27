@@ -70,7 +70,7 @@ These are at the top of `assets/css/style.css`: ground `#EEF0EC`, ink `#14201B`,
 
 ## Garmin stats ("2026 so far" on the home page)
 
-A GitHub Action (`.github/workflows/garmin-stats.yml`) runs every morning, asks Garmin for this year's activities, and saves only the totals to `_data/stats.json`: miles ridden, gym days and ski days (each counted once per day, so strength plus Pilates on the same day is one gym day), and other activities. Walks aren't counted. No maps, routes or times are saved. The panel stays hidden until that file exists.
+A GitHub Action (`.github/workflows/garmin-stats.yml`) runs every morning, asks Garmin for this year's activities, and saves only the totals to `_data/stats.json`: miles ridden, gym days, ski days, climbing days, and other activities (everything else, such as running, hiking, yoga or pickleball). Gym, ski and climbing days are each counted once per day, so strength plus Pilates on the same day is one gym day. Walks aren't counted. No maps, routes or times are saved. The panel stays hidden until that file exists.
 
 Setup, once:
 1. In Garmin Connect on the web, go to **Settings → Personal API Key**, accept the terms, choose an expiry (1 year is easiest) and create the key. Copy it straight away; Garmin only shows it once.
