@@ -29,6 +29,10 @@ about_photo_alt: ""
 # button appears on the site. Leave empty to hide it.
 newsletter_url: ""
 
+# Keeps Google and other search engines from listing the site while it's
+# still being worked on. Change to false when you're ready to launch.
+hide_from_search: true
+
 # ---------------------------------------------------------------
 # You normally don't need to change anything below this line.
 # ---------------------------------------------------------------
@@ -53,3 +57,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - scripts

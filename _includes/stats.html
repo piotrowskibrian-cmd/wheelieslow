@@ -1,0 +1,42 @@
+{%- comment -%}
+Year-to-date totals from Garmin (_data/stats.json, written daily by
+scripts/update_stats.py). Shows nothing until that file exists.
+{%- endcomment -%}
+{%- assign s = site.data.stats -%}
+{%- if s and s.year -%}
+{%- assign miles = s.miles_ridden | default: 0 -%}
+{%- if miles >= 1000 -%}
+  {%- assign thousands = miles | divided_by: 1000 | floor -%}
+  {%- assign rest = miles | modulo: 1000 | prepend: "00" | slice: -3, 3 -%}
+  {%- capture miles_text -%}{{ thousands }},{{ rest }}{%- endcapture -%}
+{%- else -%}
+  {%- assign miles_text = miles -%}
+{%- endif -%}
+<section class="band band-stats" aria-labelledby="stats-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="stats-title">{{ s.year }} so far</h2>
+      {% if s.latest %}<p class="stats-latest">Latest: {{ s.latest.label }}, {{ s.latest.date | date: "%b %-d" }}</p>{% endif %}
+    </div>
+    <dl class="stats">
+      <div class="stat stat-lead">
+        <dt>Miles ridden</dt>
+        <dd>{{ miles_text }}</dd>
+      </div>
+      <div class="stat">
+        <dt>Gym &amp; Pilates sessions</dt>
+        <dd>{{ s.gym_sessions | default: 0 }}</dd>
+      </div>
+      <div class="stat">
+        <dt>Ski days</dt>
+        <dd>{{ s.ski_days | default: 0 }}</dd>
+      </div>
+      <div class="stat">
+        <dt>Other activities</dt>
+        <dd>{{ s.other_sessions | default: 0 }}</dd>
+      </div>
+    </dl>
+    <p class="fine-print">Pulled from Garmin each morning{% if s.updated %}. Last change {{ s.updated | date: "%b %-d" }}{% endif %}.</p>
+  </div>
+</section>
+{%- endif -%}

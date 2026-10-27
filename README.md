@@ -67,3 +67,20 @@ It also has `home_photo` and `about_photo`. Upload a photo to `assets/img/`, the
 ## Brand colors
 
 These are at the top of `assets/css/style.css`: ground `#EEF0EC`, ink `#14201B`, accent orange `#E8562A`.
+
+## Garmin stats ("2026 so far" on the home page)
+
+A GitHub Action (`.github/workflows/garmin-stats.yml`) runs every morning, asks Garmin for this year's activities, and saves only the totals to `_data/stats.json`: miles ridden, gym and Pilates sessions, ski days (counted once per day), and other activities. Walks aren't counted. No maps, routes or times are saved. The panel stays hidden until that file exists.
+
+Setup, once:
+1. In Garmin Connect on the web, go to **Settings → Personal API Key**, accept the terms, choose an expiry (1 year is easiest) and create the key. Copy it straight away; Garmin only shows it once.
+2. In this repository, go to **Settings → Secrets and variables → Actions → New repository secret**. Name it `GARMIN_API_KEY` and paste the key.
+3. Go to **Actions → Update Garmin stats → Run workflow** to run it now instead of waiting for the morning.
+
+When the key expires, Garmin emails you about a week before. Create a new key and replace the secret.
+
+To change what counts as what, edit the lists at the top of `scripts/update_stats.py`.
+
+## Before launch
+
+Set `hide_from_search: false` in `_config.yml` so search engines can list the site.

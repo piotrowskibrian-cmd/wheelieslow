@@ -202,6 +202,17 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
 .post-nav a span { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
 .post-nav .next { text-align: right; margin-left: auto; }
 
+/* Year-to-date stats */
+.band-stats { background: var(--ink); color: var(--ground); border-top-color: var(--ink); }
+.band-stats h2 { color: var(--ground); }
+.stats-latest { margin: 0; color: #C9D1CC; font-weight: 600; }
+.stats { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 1px; background: #33403A; border: 1px solid #33403A; border-radius: var(--radius); overflow: hidden; }
+.stat { background: var(--ink); padding: 24px; display: flex; flex-direction: column-reverse; gap: 6px; }
+.stat dt { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C9D1CC; }
+.stat dd { margin: 0; font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 800; font-style: italic; line-height: 1; letter-spacing: -0.02em; }
+.stat-lead dd { color: var(--accent); }
+.band-stats .fine-print { color: #A9B3AD; }
+
 /* Embeds and photos */
 .ride-data { margin-top: 48px; }
 .ride-data h2 { font-size: 1.4rem; margin-bottom: 16px; }
@@ -237,6 +248,9 @@ h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
   .hero-mark { order: -1; justify-content: flex-start; }
   .hero-mark svg { width: 140px; }
   .post-nav a { max-width: 100%; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { padding: 18px 16px; }
+  .stat dt { font-size: 0.7rem; letter-spacing: 0.1em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
