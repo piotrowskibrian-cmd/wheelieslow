@@ -41,7 +41,9 @@
         {% if site.youtube != "" %}<a href="{{ site.youtube }}">YouTube</a>{% endif %}
         {% if site.instagram != "" %}<a href="{{ site.instagram }}">Instagram</a>{% endif %}
         {% if site.strava != "" %}<a href="{{ site.strava }}">Strava</a>{% endif %}
-        {% if site.newsletter_url != "" %}<a href="{{ site.newsletter_url }}">Email updates</a>{% endif %}      </nav>
+        {% if site.contact_email %}<a href="mailto:{{ site.contact_email }}">Contact me</a>{% endif %}
+        {% if site.newsletter_url != "" %}<a href="{{ site.newsletter_url }}">Email updates</a>{% endif %}
+      </nav>
       <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
     </div>
   </footer>

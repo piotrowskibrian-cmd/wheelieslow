@@ -48,6 +48,15 @@ This site is where the full story lives: [race reports and training notes]({{ '/
 </div>
 </section>
 
+{% if site.contact_email %}
+<section class="band band-tight" id="contact" aria-labelledby="contact-title">
+  <div class="wrap-narrow contact">
+    <h2 id="contact-title">Contact me</h2>
+    <p>Questions about a race, swapping recovery stories, gear opinions, or just want to tell me I should've stretched more? Drop me a line at <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>. I read everything, usually right after a ride.</p>
+  </div>
+</section>
+{% endif %}
+
 <section class="band">
   <div class="wrap">
     {% include follow.html %}
