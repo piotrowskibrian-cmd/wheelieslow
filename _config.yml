@@ -34,7 +34,7 @@ newsletter_url: ""
 
 # Keeps Google and other search engines from listing the site while it's
 # still being worked on. Change to false when you're ready to launch.
-hide_from_search: true
+hide_from_search: false
 
 # ---------------------------------------------------------------
 # You normally don't need to change anything below this line.
