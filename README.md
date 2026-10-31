@@ -34,9 +34,13 @@ The Wheelieslow website. It's a Jekyll site, which GitHub Pages builds and hosts
 
 ## Scheduling posts
 
-Give a post a future date and it stays hidden until then. A daily job (`.github/workflows/scheduled-posts.yml`) rebuilds the site every morning around 6 AM Central, so the post goes live that morning on its own.
+Weekly posts go out **Sunday evenings**. Give a post a future date and time and it stays hidden until then; a scheduled job (`.github/workflows/scheduled-posts.yml`) rebuilds the site every Sunday around 7 PM Central and every morning around 6 AM, so the post goes live at the first rebuild after its time.
 
-For a specific time, add a `date` line at the top of the post, e.g. `date: 2026-11-07 07:00:00 -0600`. It goes live at the first daily rebuild after that time.
+For a Sunday-evening post, put this at the top of the post (times are Chicago time):
+
+```
+date: 2026-11-08 18:00:00
+```
 
 ## Videos, rides and photos in the middle of a post
 

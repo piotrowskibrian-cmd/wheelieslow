@@ -1,11 +1,15 @@
 name: Publish scheduled posts
 
 # Posts dated in the future stay hidden until their date. This rebuilds the
-# site every morning (about 6:07 AM Central in winter, 7:07 AM in summer) so
-# any post whose date has arrived goes live without anyone touching the site.
+# site so any post whose date has arrived goes live without anyone touching it:
+#   - every morning, about 6:07 AM Central (7:07 AM in summer)
+#   - Sunday evenings, about 7:07 PM Central (8:07 PM in summer), the regular
+#     slot for weekly posts. Times are UTC; Sunday evening in Chicago is
+#     Monday morning in UTC.
 on:
   schedule:
     - cron: "7 12 * * *"
+    - cron: "7 1 * * 1"
   workflow_dispatch:
   push:
     branches: [main]
