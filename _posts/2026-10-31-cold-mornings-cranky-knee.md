@@ -36,6 +36,8 @@ There's something about climbing that does two things at once. It gets my brain 
 
 That's exactly the kind of awareness all that PT was trying to teach me. On the bike, I can grind through bad habits for hours without noticing. On the wall, I notice right away.
 
+{% include photo.html src="/assets/img/posts/climbing-wall.jpg" alt="Brian climbing a tall indoor wall on a rope, reaching for a hold with one leg out wide" %}
+
 ## Getting out the door
 
 So that was the week: cold mornings, a cranky knee, a lot of time in the gym, and a reminder that the boring stuff works.
