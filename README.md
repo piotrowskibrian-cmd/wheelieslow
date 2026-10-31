@@ -32,7 +32,11 @@ The Wheelieslow website. It's a Jekyll site, which GitHub Pages builds and hosts
    - `strava_id` puts the ride (map, distance, elevation) at the bottom of the post under "The ride". It's the number at the end of the activity link: `strava.com/activities/12345678901`. The activity must be public on Strava, or the embed shows nothing.
 4. Click **Commit changes**. The post appears on the Journal page and the home page.
 
-A post dated in the future won't show up until that date has passed and the site rebuilds.
+## Scheduling posts
+
+Give a post a future date and it stays hidden until then. A daily job (`.github/workflows/scheduled-posts.yml`) rebuilds the site every morning around 6 AM Central, so the post goes live that morning on its own.
+
+For a specific time, add a `date` line at the top of the post, e.g. `date: 2026-11-07 07:00:00 -0600`. It goes live at the first daily rebuild after that time.
 
 ## Videos, rides and photos in the middle of a post
 

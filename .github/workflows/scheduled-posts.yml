@@ -1,0 +1,26 @@
+name: Publish scheduled posts
+
+# Posts dated in the future stay hidden until their date. This rebuilds the
+# site every morning (about 6:07 AM Central in winter, 7:07 AM in summer) so
+# any post whose date has arrived goes live without anyone touching the site.
+on:
+  schedule:
+    - cron: "7 12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/scheduled-posts.yml
+
+permissions:
+  contents: read
+  pages: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebuild the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent
