@@ -8,7 +8,7 @@
         {% if post.category %}<span class="dot" aria-hidden="true">·</span>{{ post.category }}{% endif %}
       </span>
       <span class="post-card-title">{{ post.title }}</span>
-      <span class="post-card-summary">{{ post.summary | default: post.excerpt | strip_html | truncatewords: 32 }}</span>
+      <span class="post-card-summary">{% if post.summary %}{{ post.summary }}{% else %}{{ post.excerpt | strip_html | truncatewords: 32 }}{% endif %}</span>
     </a>
   </li>
   {%- endfor -%}
