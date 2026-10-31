@@ -2,8 +2,8 @@
 title: "Cold mornings, a cranky knee, and the climbing wall"
 category: Comeback
 summary: "Fall is my favorite time to ride and the hardest time to get out the door. This week also brought a nagging knee and a trip back to my old PT exercises."
-image: /assets/img/posts/fall-riding-trail.jpg
-image_alt: "Brian riding a dirt trail through the woods, the trees blurred with speed"
+image: /assets/img/posts/climbing-wall.jpg
+image_alt: "Brian climbing a tall indoor wall on a rope, reaching for a hold with one leg out wide"
 ---
 
 Fall is one of my favorite times of year to ride. Cool air, leaves on the trail, the kind of riding that reminds me why I started doing this twenty years ago.
@@ -15,6 +15,8 @@ It's also one of the hardest times to get out the door.
 The alarm goes off, it's dark, it's cold, and the bed makes a very convincing argument. In the summer I'm up and rolling before I've really thought about it. In the fall, every early ride starts with a negotiation.
 
 The funny thing is I almost never regret it once I'm out there. The hard part is the first ten minutes: getting dressed, getting the lights on the bike, getting out the door.
+
+{% include photo.html src="/assets/img/posts/fall-riding-trail.jpg" alt="Brian riding a dirt trail through the woods, the trees blurred with speed" %}
 
 It doesn't help that I started a new job this year. I work a normal 9 to 5, and I feel like I have a lot to prove there. When the day already feels full before it starts, the morning ride is competing with sleep *and* with the part of my brain that's already thinking about work. I'm still figuring out that balance.
 
@@ -35,8 +37,6 @@ I spent a lot of time in the gym this week, between strength work, stretching, P
 There's something about climbing that does two things at once. It gets my brain to turn off. There's no room to think about work or anything else when you're halfway up a wall. But at the same time, it makes me think hard about body position: where my hips are, what my legs are doing, how I'm using my arms.
 
 That's exactly the kind of awareness all that PT was trying to teach me. On the bike, I can grind through bad habits for hours without noticing. On the wall, I notice right away.
-
-{% include photo.html src="/assets/img/posts/climbing-wall.jpg" alt="Brian climbing a tall indoor wall on a rope, reaching for a hold with one leg out wide" %}
 
 ## Getting out the door
 
