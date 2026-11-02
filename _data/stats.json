@@ -1,14 +1,14 @@
 {
   "year": 2026,
-  "miles_ridden": 1269,
-  "rides": 64,
-  "gym_days": 110,
+  "miles_ridden": 1293,
+  "rides": 65,
+  "gym_days": 111,
   "ski_days": 0,
-  "climbing_days": 59,
+  "climbing_days": 60,
   "other_sessions": 13,
   "latest": {
     "label": "Climbing session",
-    "date": "2026-10-31"
+    "date": "2026-11-02"
   },
-  "updated": "2026-10-31"
+  "updated": "2026-11-02"
 }
