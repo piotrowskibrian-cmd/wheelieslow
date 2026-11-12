@@ -1,14 +1,14 @@
 {
   "year": 2026,
-  "miles_ridden": 1293,
-  "rides": 65,
+  "miles_ridden": 1304,
+  "rides": 66,
   "gym_days": 114,
   "ski_days": 0,
   "climbing_days": 60,
   "other_sessions": 13,
   "latest": {
-    "label": "Pilates",
-    "date": "2026-11-11"
+    "label": "Indoor ride",
+    "date": "2026-11-12"
   },
-  "updated": "2026-11-11"
+  "updated": "2026-11-12"
 }
