@@ -1,5 +1,5 @@
 ---
-title: "Recovery now requires its own training plan"
+title: "Every comeback story has its setbacks"
 date: 2026-11-15 18:00:00
 category: Comeback
 summary: "A trainer ride that turned into a two-week migraine, a gym session I'm still paying for, and why riding indoors has always been a struggle for me."
@@ -15,7 +15,7 @@ The last couple of weeks have been rough. One thing I've realized as I've gotten
 
 The migraine stuck around for nearly two weeks, and it limited my ability to do much of anything physically. That was incredibly frustrating.
 
-I'm pretty sure it was heat and dehydration. I've struggled with both before, and riding indoors makes them worse. There's no wind to cool you off, you sweat more than you realize, and it's easy to finish a session further behind on fluids than you ever would outside.
+I still don't know exactly what caused it. It wasn't the room. I had two fans going and the heat vents closed, and it was cool in there. But I was dehydrated, and that's something I've struggled with before.
 
 ## Then I overdid it
 
