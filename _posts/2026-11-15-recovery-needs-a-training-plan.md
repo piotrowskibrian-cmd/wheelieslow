@@ -3,6 +3,8 @@ title: "Recovery now requires its own training plan"
 date: 2026-11-15 18:00:00
 category: Comeback
 summary: "A trainer ride that turned into a two-week migraine, a gym session I'm still paying for, and why riding indoors has always been a struggle for me."
+image: /assets/img/posts/trainer-setup.jpg
+image_alt: "Brian riding his bike on an indoor trainer at home, with a fan, a towel on the handlebars and a tablet showing a virtual ride"
 ---
 
 The last two weeks have been pretty rough. One thing I've realized as I've gotten older is that managing your health and staying active gets a little more complicated.
