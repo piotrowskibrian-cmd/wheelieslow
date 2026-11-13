@@ -7,13 +7,21 @@ image: /assets/img/posts/trainer-setup.jpg
 image_alt: "Brian riding his bike on an indoor trainer at home, with a fan, a towel on the handlebars and a tablet showing a virtual ride"
 ---
 
-The last two weeks have been pretty rough. One thing I've realized as I've gotten older is that managing your health and staying active gets a little more complicated.
+Two weeks ago, a trainer ride gave me a migraine that lasted almost two weeks.
+
+The last couple of weeks have been rough. One thing I've realized as I've gotten older is that managing your health and staying active gets a little more complicated.
 
 ## Two weeks lost to a migraine
 
-About two weeks ago, an indoor trainer ride triggered a migraine that stuck around for nearly two weeks. It limited my ability to do much of anything physically, which was incredibly frustrating.
+The migraine stuck around for nearly two weeks, and it limited my ability to do much of anything physically. That was incredibly frustrating.
 
-I finally felt good enough to get back into the gym for a day. After watching a family member's college football game, I was feeling particularly motivated to push myself. Well, I succeeded. Maybe a little too much.
+I'm pretty sure it was heat and dehydration. I've struggled with both before, and riding indoors makes them worse. There's no wind to cool you off, you sweat more than you realize, and it's easy to finish a session further behind on fluids than you ever would outside.
+
+## Then I overdid it
+
+After two weeks of doing almost nothing, I tried to make up for it in one session.
+
+I finally felt good enough to get back into the gym, and after watching a family member's college football game, I was feeling particularly motivated to push myself. Well, I succeeded. Maybe a little too much.
 
 I could barely walk for the next two days. It wasn't until day three that the soreness felt like what I'd normally expect after a long ride. Five days later, I'm still sore. Apparently, I forgot that I'm not a college athlete.
 
@@ -27,9 +35,13 @@ Morning rides have never bothered me as much. There are fewer cars, less traffic
 
 ## Wanting to train, and not being able to
 
-The frustrating part is that I actually want to train. I have some pretty big cycling goals for next year, and this is the time of year when I should be building fitness. I'm already fighting the mental battle of getting on the trainer, and when I finally do, I end up with a migraine that sidelines me for two weeks. Not exactly the motivation I needed.
+The frustrating part is that I actually want to train. I'm waiting to hear back from the UNBOUND Gravel lottery, I'm planning a season around the Leadville races next summer, and this is the time of year when I should be building fitness. I'm already fighting the mental battle of getting on the trainer, and when I finally do, I end up with a migraine that sidelines me for two weeks. Not exactly the motivation I needed.
 
-I think I'm finally in the clear, but figuring out what triggered it and how to keep it from happening again is something I'm actively working on. I've dealt with migraines before, but never quite like this. It's been a reminder that sometimes your body has other plans.
+I've dealt with migraines before, but never quite like this. It's been a reminder that sometimes your body has other plans.
+
+## The plan from here
+
+I think I'm finally in the clear. Once things stay stable, the plan is simple: start riding again slowly and build back up from there, instead of trying to make up for lost time in one week. I already tried that in the gym, and I'm still walking funny.
 
 Apparently, recovery now requires its own training plan.
 
