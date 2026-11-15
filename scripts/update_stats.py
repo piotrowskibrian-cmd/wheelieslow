@@ -15,6 +15,7 @@ import datetime as dt
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -106,28 +107,48 @@ def label_for(key):
 # ---------------------------------------------------------------------------
 # Garmin API
 # ---------------------------------------------------------------------------
+RETRY_DELAYS = (10, 30)  # seconds to wait before the 2nd and 3rd attempts
+
+
 def _request(method, url, headers):
+    """Make a request, retrying a couple of times if Garmin's servers hiccup."""
+    for attempt in range(len(RETRY_DELAYS) + 1):
+        try:
+            return _request_once(method, url, headers)
+        except _Temporary as err:
+            if attempt == len(RETRY_DELAYS):
+                raise SystemExit(f"{err} Tried {attempt + 1} times; the next scheduled run will try again.")
+            print(f"{err} Retrying in {RETRY_DELAYS[attempt]} seconds.")
+            time.sleep(RETRY_DELAYS[attempt])
+
+
+class _Temporary(Exception):
+    """A server-side or network problem worth retrying."""
+
+
+def _request_once(method, url, headers):
     headers = {"User-Agent": "wheelieslow-stats/1.0", **headers}
     data = b"" if method == "POST" else None  # sends Content-Length: 0 like Garmin's own client
     req = urllib.request.Request(url, data=data, method=method, headers=headers)
+    path = urllib.parse.urlsplit(url).path
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             return resp.read().decode("utf-8")
     except urllib.error.HTTPError as err:
+        if err.code >= 500 or err.code == 429:
+            raise _Temporary(f"Garmin had a temporary problem (HTTP {err.code}) on {method} {path}.")
         hint = ""
         if err.code in (401, 403):
             hint = " The Garmin key may be wrong, deleted or expired. Create a new one and update the GARMIN_API_KEY secret."
-        elif err.code == 429:
-            hint = " Garmin is rate limiting requests. The next daily run will try again."
         try:
             detail = err.read().decode("utf-8", "replace")
         except Exception:
             detail = ""
-        detail = " ".join(detail.split())[:300]
-        raise SystemExit(f"Garmin request failed: HTTP {err.code} for {method} {urllib.parse.urlsplit(url).path}.{hint}"
+        detail = "" if "<html" in detail.lower() else " ".join(detail.split())[:300]
+        raise SystemExit(f"Garmin request failed: HTTP {err.code} for {method} {path}.{hint}"
                          + (f" Garmin said: {detail}" if detail else ""))
-    except urllib.error.URLError as err:
-        raise SystemExit(f"Could not reach Garmin: {err.reason}")
+    except (urllib.error.URLError, TimeoutError) as err:
+        raise _Temporary(f"Could not reach Garmin ({getattr(err, 'reason', err)}).")
 
 
 def clean_key(raw):
