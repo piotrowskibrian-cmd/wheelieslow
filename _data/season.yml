@@ -14,14 +14,14 @@
   date: 2027-02-07
   location: Lyons, CO
   distance: 75 mi gravel
-  status: planned
+  status: dropped
   report: ""
 
 - name: Barry-Roubaix
   date: 2027-04-17
   location: Hastings, MI
   distance: 62 mi gravel
-  status: planned
+  status: registered
   report: ""
 
 - name: UNBOUND Gravel
