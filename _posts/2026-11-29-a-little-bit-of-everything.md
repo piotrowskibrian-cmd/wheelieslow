@@ -3,6 +3,8 @@ title: "A Little Bit of Everything: Bikes, Skis, and the Road Ahead"
 date: 2026-11-29 18:00:00
 category: Comeback
 summary: "Back on the bike, officially registered for UNBOUND Gravel and Barry-Roubaix, 2,000 miles behind the wheel, and my first ski day of the season."
+image: /assets/img/posts/keystone-chairlift.jpg
+image_alt: "Brian smiling in a helmet and goggles on a chairlift at Keystone, with snowy mountains behind him"
 ---
 
 The last two weeks have been interesting, exciting, frustrating, and just about everything in between.
@@ -29,9 +31,17 @@ With my first races of 2027 taking shape, I've got some much-needed motivation t
 
 Of course, training hasn't been the only thing going on.
 
-I spent much of last week behind the windshield, driving roughly 2,000 miles round-trip to Denver to visit family. That's a lot of time in a truck, but it was worth it. I also managed to sneak in my first ski day of the season at Keystone.
+I spent much of last week behind the windshield, driving roughly 2,000 miles round-trip to Denver to visit family. That's a lot of time in a truck, but it was worth it.
+
+{% include photo.html src="/assets/img/posts/i70-drive.jpg" alt="Snow-covered Rocky Mountains ahead on the highway into the mountains" %}
+
+I also managed to sneak in my first ski day of the season at Keystone.
 
 It felt great to be back on skis, even if it was only for a day. There's something about getting into the mountains that always reminds me how much I enjoy winter. As much as I love cycling, skiing gives me something to look forward to when the temperatures drop.
+
+And with ski season officially here, that means one thing back home: it's time to wax the skis.
+
+{% include photo.html src="/assets/img/posts/ski-wax.jpg" alt="Several pairs of skis laid out on a bench, ready for waxing" %}
 
 ## The road ahead
 
