@@ -44,7 +44,7 @@
         {% if site.contact_email %}<a href="mailto:{{ site.contact_email }}">Contact me</a>{% endif %}
         {% if site.newsletter_url != "" %}<a href="{{ site.newsletter_url }}">Email updates</a>{% endif %}
       </nav>
-      <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.author }}</p>
+      <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.author }} <span aria-hidden="true">·</span> <a href="{{ '/privacy/' | relative_url }}">Privacy</a></p>
     </div>
   </footer>
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>

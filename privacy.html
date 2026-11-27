@@ -1,0 +1,62 @@
+---
+layout: default
+title: Privacy
+permalink: /privacy/
+description: What Wheelieslow collects (almost nothing), the outside services the site uses, and how to get in touch.
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy policy</h1>
+    <p class="lede">The short version: this site doesn't track you, doesn't use cookies, and doesn't sell anything about you. Here's the longer version.</p>
+  </div>
+</section>
+
+<section class="band band-tight">
+<div class="wrap-narrow prose">
+{% capture policy %}
+*Last updated: November 27, 2026*
+
+Wheelieslow (wheelieslow.com) is a personal blog run by {{ site.author }}. "I" and "me" below means me.
+
+## What this site collects
+
+Nothing, directly. The site has no accounts, no comment forms, no sign-up forms, and no analytics or tracking. It doesn't set any cookies.
+
+## If you email me
+
+If you use the "Email me" or "Contact me" links, your email app sends me a normal email. I'll see your email address and whatever you write, and I use it only to read and reply to your message. I don't add you to any list, and I don't share or sell your email. If you'd like me to delete our conversation, just ask.
+
+## Hosting
+
+The site is hosted on GitHub Pages. Like most web hosts, GitHub may keep basic technical logs, such as IP addresses, for security and to keep the service running. I don't have access to those logs. See [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+
+## Outside services the site uses
+
+Some parts of the site load content from other companies. When your browser loads that content, those companies receive basic technical information, such as your IP address and browser type, under their own privacy policies:
+
+- **Google Fonts.** The site's typefaces load from Google. See [Google's privacy policy](https://policies.google.com/privacy).
+- **YouTube videos.** Videos are embedded using YouTube's privacy-enhanced mode, which doesn't store information about you unless you play the video. See [Google's privacy policy](https://policies.google.com/privacy).
+- **Strava rides.** Some posts include a ride from Strava, which loads from Strava's servers. See [Strava's privacy policy](https://www.strava.com/legal/privacy).
+
+Links to YouTube, Instagram and Strava take you to those sites, which have their own privacy policies.
+
+## My activity stats
+
+The "so far" numbers on the home page are totals from my own Garmin account, like miles ridden and gym days. They're about me, not you, and they never include maps, routes or locations.
+
+## Children
+
+This site isn't aimed at children under 13, and I don't knowingly collect information from them.
+
+## Changes
+
+If the site changes, for example if I add an email newsletter, visitor stats or affiliate links, I'll update this page and the date at the top.
+
+## Questions
+
+[Email me](mailto:{{ site.contact_email }}) with any questions about this page.
+{% endcapture %}
+{{ policy | markdownify }}
+</div>
+</section>
